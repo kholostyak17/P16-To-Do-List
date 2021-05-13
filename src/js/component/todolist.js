@@ -28,6 +28,7 @@ const ToDoList = () => {
 				onKeyPress={event => {
 					if (event.key == "Enter") {
 						setList([...list, event.target.value]);
+						event.target.value = "";
 					}
 				}}></input>
 			<section>
