@@ -13,14 +13,31 @@ const ToDoList = () => {
 	useEffect(() => {
 		setListMap(
 			list.map((task, index) => {
-				return <li key={index.toString()}>{task}</li>;
+				return (
+					<li key={index.toString()}>
+						<span>{task}</span>
+						<button
+							className="delete"
+							onClick={() => {
+								deleteTask(index);
+							}}>
+							X
+						</button>
+					</li>
+				);
 			})
 		);
 		console.log(listMap);
 	}, [list]);
 
+	const deleteTask = indexDelete => {
+		setList(list.filter((_, index) => index != indexDelete));
+		/* CUIDADO CON METER ENTRE LLAVES LO QUE HAY EN LA
+        ARROW FUNCT DEL FILTER!!!!!!!!!!!!!!!!!!!!!!!!!*/
+	};
+
 	return (
-		<div className="bg-danger text-dark p-4 col">
+		<div className="notepad bg-danger text-dark p-4 col">
 			<p>To Do List</p>
 			<input
 				type="text"
