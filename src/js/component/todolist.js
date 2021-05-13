@@ -8,12 +8,14 @@ const ToDoList = () => {
 		return <div className="bg-white text-dark">{newTask}</div>;
 	}*/
 	const [list, setList] = useState([]);
-	let listMap = "";
+	const [listMap, setListMap] = useState("");
 
 	useEffect(() => {
-		listMap = list.map((task, index) => {
-			return <li key={index.toString()}>{task}</li>;
-		});
+		setListMap(
+			list.map((task, index) => {
+				return <li key={index.toString()}>{task}</li>;
+			})
+		);
 		console.log(listMap);
 	}, [list]);
 
