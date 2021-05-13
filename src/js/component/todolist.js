@@ -37,7 +37,7 @@ const ToDoList = () => {
 	};
 
 	return (
-		<div className="notepad bg-warning text-dark p-4 col">
+		<div className="notepad text-dark p-4 col">
 			<p>To Do List</p>
 			<input
 				type="text"
